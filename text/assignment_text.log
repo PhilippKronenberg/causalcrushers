@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.14)  23 FEB 2021 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.14)  8 MAR 2021 12:57
 entering extended mode
 **./assignment_text.tex
 (assignment_text.tex
@@ -1086,42 +1086,42 @@ ine 25.
 \pgfsyspdfmark {pgfid4}{36773952}{14331093}
 \pgfsyspdfmark {pgfid5}{38395967}{14083919}
 ]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-8.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+5.
  ("C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-8.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+5.
 
 ("C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-38.
+45.
 
 ("C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-38.
+45.
 
 ("C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 38.
+(Font)              <10.95> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 38.
+(Font)              <8> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 38.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+(Font)              <6> on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
@@ -1129,25 +1129,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package natbib Warning: Citation `imbens2015causal' on page 2 undefined on inpu
-t line 72.
+t line 73.
 
 [2] [3]
-Overfull \hbox (9.52554pt too wide) in paragraph at lines 127--146
+Overfull \hbox (9.52554pt too wide) in paragraph at lines 128--147
  [] 
  []
 
 
 LaTeX Warning: Marginpar on page 4 moved.
 
-<../figures/density_total.pdf, id=90, 568.1225pt x 397.485pt>
+<../figures/density_total.pdf, id=89, 568.1225pt x 397.485pt>
 File: ../figures/density_total.pdf Graphic file (type pdf)
 <use ../figures/density_total.pdf>
-Package pdftex.def Info: ../figures/density_total.pdf  used on input line 152.
+Package pdftex.def Info: ../figures/density_total.pdf  used on input line 153.
 (pdftex.def)             Requested size: 455.24411pt x 318.52216pt.
-<../figures/density_goups.pdf, id=91, 568.1225pt x 397.485pt>
+<../figures/density_goups.pdf, id=90, 568.1225pt x 397.485pt>
 File: ../figures/density_goups.pdf Graphic file (type pdf)
 <use ../figures/density_goups.pdf>
-Package pdftex.def Info: ../figures/density_goups.pdf  used on input line 161.
+Package pdftex.def Info: ../figures/density_goups.pdf  used on input line 162.
 (pdftex.def)             Requested size: 455.24411pt x 318.52216pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1156,62 +1156,64 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4
-\pgfsyspdfmark {pgfid6}{18201890}{28188279}
-\pgfsyspdfmark {pgfid9}{36773952}{28203726}
-\pgfsyspdfmark {pgfid10}{38395967}{27956552}
-\pgfsyspdfmark {pgfid11}{11467581}{24944883}
-\pgfsyspdfmark {pgfid14}{36773952}{23611182}
-\pgfsyspdfmark {pgfid15}{38395967}{23364008}
+\pgfsyspdfmark {pgfid6}{18201890}{26655462}
+\pgfsyspdfmark {pgfid9}{36773952}{26670909}
+\pgfsyspdfmark {pgfid10}{38395967}{26423735}
+\pgfsyspdfmark {pgfid11}{11467581}{23412066}
+\pgfsyspdfmark {pgfid14}{36773952}{22078365}
+\pgfsyspdfmark {pgfid15}{38395967}{21831191}
 ] [5 <../figures/density_total.pdf>] [6 <../figures/density_goups.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 253.
-
-[7
-
-]
-<../figures/part5a.pdf, id=149, 378.41376pt x 284.06125pt>
+(Font)              <9> on input line 254.
+<../figures/part5a.pdf, id=139, 378.41376pt x 284.06125pt>
 File: ../figures/part5a.pdf Graphic file (type pdf)
 <use ../figures/part5a.pdf>
-Package pdftex.def Info: ../figures/part5a.pdf  used on input line 260.
+Package pdftex.def Info: ../figures/part5a.pdf  used on input line 261.
 (pdftex.def)             Requested size: 250.38564pt x 187.95776pt.
- [8 <../figures/part5a.pdf>]
-<../figures/part5c.pdf, id=170, 378.41376pt x 284.06125pt>
+
+[7 <../figures/part5a.pdf>]
+<../figures/part5c.pdf, id=159, 378.41376pt x 284.06125pt>
 File: ../figures/part5c.pdf Graphic file (type pdf)
 <use ../figures/part5c.pdf>
-Package pdftex.def Info: ../figures/part5c.pdf  used on input line 327.
+Package pdftex.def Info: ../figures/part5c.pdf  used on input line 328.
 (pdftex.def)             Requested size: 250.38564pt x 187.95776pt.
- [9 <../figures/part5c.pdf>]
-<../figures/part5d.pdf, id=184, 378.41376pt x 284.06125pt>
+ [8]
+<../figures/part5d.pdf, id=174, 378.41376pt x 284.06125pt>
 File: ../figures/part5d.pdf Graphic file (type pdf)
 <use ../figures/part5d.pdf>
-Package pdftex.def Info: ../figures/part5d.pdf  used on input line 344.
+Package pdftex.def Info: ../figures/part5d.pdf  used on input line 345.
 (pdftex.def)             Requested size: 250.38564pt x 187.95776pt.
-<../figures/part5d2.pdf, id=187, 378.41376pt x 284.06125pt>
+ [9 <../figures/part5c.pdf> <../figures/part5d.pdf>]
+<../figures/part5d2.pdf, id=193, 378.41376pt x 284.06125pt>
 File: ../figures/part5d2.pdf Graphic file (type pdf)
 <use ../figures/part5d2.pdf>
-Package pdftex.def Info: ../figures/part5d2.pdf  used on input line 355.
+Package pdftex.def Info: ../figures/part5d2.pdf  used on input line 356.
 (pdftex.def)             Requested size: 250.38564pt x 187.95776pt.
- [10 <../figures/part5d.pdf> <../figures/part5d2.pdf>] (assignment_text.bbl)
+ [10 <../figures/part5d2.pdf>] (assignment_text.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 372.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 373.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 373.
 (assignment_text.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 373.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 373.
 Package rerunfilecheck Info: File `assignment_text.out' has not changed.
 (rerunfilecheck)             Checksum: B1F75CB6250C1E4FA68CF26839069F05;289.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 372.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 373.
  ) 
 Here is how much of TeX's memory you used:
  23592 strings out of 481199
  423868 string characters out of 2915339
- 707543 words of memory out of 3000000
+ 708543 words of memory out of 3000000
  38577 multiletter control sequences out of 15000+200000
  630506 words of font info for 85 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,20n,87p,1538b,1033s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,20n,87p,1652b,1033s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/M
 iKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips
 /lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Pro
@@ -1230,7 +1232,7 @@ TeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/lm/lmri9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Pr
 ogram Files/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fon
 ts/type1/public/lm/lmsy8.pfb>
-Output written on assignment_text.pdf (10 pages, 384667 bytes).
+Output written on assignment_text.pdf (10 pages, 384684 bytes).
 PDF statistics:
  285 PDF objects out of 1000 (max. 8388607)
  54 named destinations out of 1000 (max. 500000)
