@@ -22,15 +22,15 @@ df <- data_table
 
 attach(df)
 Y1 <- harv
-Y2 <- educ
-X1 <- cbind(area, sun, rain, exp, dist, child, treat)
+Y2 <- treat
+X1 <- cbind(area, sun, rain, exp, dist, child)
 X2 <- vouch
 
 # Ordinary Least Squares 
 ols_reg <- lm(Y1 ~ Y2 + X1)
 summary(ols_reg)
 
-# Tw-stage Least Squares
+# Two-stage Least Squares
 iv_reg <- ivreg(Y1 ~ Y2 + X1 | X1 + X2)
 summary(iv_reg)
 
