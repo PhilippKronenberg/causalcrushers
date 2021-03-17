@@ -19,7 +19,7 @@ df <- data_table
 ## Part a - Instrumental Variables
 #Define variable 
 #(Y1 = Dependent Variable, Y2 = endogenous variable, X1 = exogenous variable, X2 = Instrument)
-
+## We want a variable that is correlated with an endogenous explanatory variable and uncorrelated with the error term. 
 attach(df)
 Y1 <- harv
 Y2 <- treat
@@ -34,7 +34,6 @@ summary(ols_reg)
 iv_reg <- ivreg(Y1 ~ Y2 + X1 | X1 + X2)
 summary(iv_reg)
 
-## https://www.rdocumentation.org/packages/instruments/versions/0.1.0
 
 
 ## Part b - Regression Discontinuity Design
@@ -42,7 +41,11 @@ summary(iv_reg)
 ## https://www.econometrics-with-r.org/13-4-quasi-experiments.html
 ## https://github.com/bquast/rddtools-article
 
-
+ggplot(aes(area, harv, data = df)) +
+  geom_point(alpha = 0.5) +
+  geom_vline(xintercept = 50, colour = "grey", linetype = 2) +
+  stat_smooth(method = "lm", se = F) +
+  labs(x = "Test score (X)", y = "Potential Outcome (Y)")
 
 ## Part c - Matching approach (e.g., exact covariate matching or nearest neighbor matching based on the 
 ##          propensity score or the post-double-selection LASSO method2 
