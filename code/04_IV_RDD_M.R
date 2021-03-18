@@ -47,10 +47,33 @@ summary(iv_reg)
 ## https://github.com/bquast/rddtools-article
 ## https://rdpackages.github.io/ 
 
-## Make RDD data object; cutpoint is at 1000 hectares for farm area
+# Redefine treatment variable to restrict farmer access based on area. Only farmers with area <= 1000m2 can participate.
+df$treat <- ifelse(area<=1000,1,0)
+
+#Save old harvest numbers
+old.harv <- df$harv
+
+# Redefine harvest based on new treatment restriction
+df <- df %>%
+  transmute(harv = 400 + 0.05*area + 0.04*sun + 0.03*rain + 5*exp - 5*child + 10*educ + 100*treat + rnorm(1, mean=0, sd=1), .before = area)
+
+#Save new harvest numbers
+new.harv <- df$harv
+
+#Compare old random harvest values to new ones with farm size restriction
+par(mfrow=c(1,2))
+plot(area,old.harv)
+plot(area,new.harv)
+
+## Make RDD data object;  RDD cutpoint is at 1000 sq. m. for farm area
+attach(df)
 rd.dat <- rdd_data(x=area, y=harv, cutpoint=1000)
 
 ## Plot
+rd.dat$color <- cut(rd.dat$x, breaks = c(0,1000,+Inf))
+plot(rd.dat$x,rd.dat$y,
+     col=rd.dat$color)
+
 rdplot(y=harv, x=area, c=1000, title="Area and Harvest",
        y.label="harvest",
        x.label="area")
@@ -61,27 +84,8 @@ rdd_mod <- rdd_reg_lm(rdd_object=rd.dat,
 summary(rdd_mod)
 plot(rdd_mod,
      cex=0.35,
-     col="steelblue",
+     col=treat,
      xlab="Area",
-     ylab="Harvest")
-
-## Different forcing variable
-## Make RDD data object; cutpoint is at 25 units of distance
-rd.dat <- rdd_data(x=dist, y=harv, cutpoint=25)
-
-## Plot
-rdplot(y=harv, x=dist, c=25, title="Distance and Harvest",
-       y.label="harvest",
-       x.label="distance")
-
-## Estimate sharp RDD model 
-rdd_mod <- rdd_reg_lm(rdd_object=rd.dat,
-                      slope="same")
-summary(rdd_mod)
-plot(rdd_mod,
-     cex=0.35,
-     col="steelblue",
-     xlab="Distance",
      ylab="Harvest")
 
 ###############################################################################################################################################
