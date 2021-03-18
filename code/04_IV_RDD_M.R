@@ -17,6 +17,9 @@ df <- data_table
 ## ...Thus, the estimate of β suffers from selection bias if there is a difference in the 
 ## no-treatment potential outcomes between the treated and the untreated.
 
+###############################################################################################################################################
+###############################################################################################################################################
+
 ## Part a - Instrumental Variables
 #Define variable 
 #(Y1 = Dependent Variable, Y2 = endogenous variable, X1 = exogenous variable, X2 = Instrument)
@@ -34,6 +37,9 @@ summary(ols_reg)
 # Two-stage Least Squares
 iv_reg <- ivreg(Y1 ~ Y2 + X1 | X1 + X2)
 summary(iv_reg)
+
+###############################################################################################################################################
+###############################################################################################################################################
 
 ## Part b - Regression Discontinuity Design
 ## https://www.rdocumentation.org/packages/rddtools/versions/1.4.0
@@ -64,9 +70,9 @@ plot(rdd_mod,
 rd.dat <- rdd_data(x=dist, y=harv, cutpoint=25)
 
 ## Plot
-rdplot(y=harv, x=area, c=1000, title="Area and Harvest",
+rdplot(y=harv, x=dist, c=25, title="Distance and Harvest",
        y.label="harvest",
-       x.label="area")
+       x.label="distance")
 
 ## Estimate sharp RDD model 
 rdd_mod <- rdd_reg_lm(rdd_object=rd.dat,
@@ -75,8 +81,12 @@ summary(rdd_mod)
 plot(rdd_mod,
      cex=0.35,
      col="steelblue",
-     xlab="Area",
+     xlab="Distance",
      ylab="Harvest")
+
+###############################################################################################################################################
+###############################################################################################################################################
+
 ## Part c - Matching approach (e.g., exact covariate matching or nearest neighbor matching based on the 
 ##          propensity score or the post-double-selection LASSO method2 
 
