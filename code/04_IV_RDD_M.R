@@ -3,6 +3,7 @@
 ## Load required packages
 library(tidyverse)
 library(AER)
+library(rddtools)
 ###############################################################################################################################################
 ###############################################################################################################################################
 
@@ -34,18 +35,21 @@ summary(ols_reg)
 iv_reg <- ivreg(Y1 ~ Y2 + X1 | X1 + X2)
 summary(iv_reg)
 
-
-
 ## Part b - Regression Discontinuity Design
 ## https://www.rdocumentation.org/packages/rddtools/versions/1.4.0
 ## https://www.econometrics-with-r.org/13-4-quasi-experiments.html
 ## https://github.com/bquast/rddtools-article
+## https://rdpackages.github.io/ 
 
-ggplot(aes(area, harv, data = df)) +
-  geom_point(alpha = 0.5) +
-  geom_vline(xintercept = 50, colour = "grey", linetype = 2) +
-  stat_smooth(method = "lm", se = F) +
-  labs(x = "Test score (X)", y = "Potential Outcome (Y)")
+## Plot
+rdplot(y=harv, x=area, c=1000, title="Area and Harvest",
+       y.label="harvest",
+       x.label="area")
+
+## Model
+
+
+
 
 ## Part c - Matching approach (e.g., exact covariate matching or nearest neighbor matching based on the 
 ##          propensity score or the post-double-selection LASSO method2 
