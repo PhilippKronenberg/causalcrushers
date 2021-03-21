@@ -59,7 +59,7 @@ df <- df %>%
   mutate(new.harv = 400 + 0.05*area + 0.04*sun + 0.03*rain + 5*exp - 5*child + 10*educ + 100*treat + rnorm(1, mean=0, sd=1), .before = area)
 
 #Save new harvest numbers
-new.harv <- df$harv
+new.harv <- df$new.harv
 
 #Compare old random harvest values to new ones with farm size restriction
 par(mfrow=c(1,2))
@@ -107,5 +107,8 @@ plot(m.out, type="hist") # plots very similar between raw and matched; probably 
 m.dat <- match.data(m.out)
 
 ## Run model with new data
-m.mod <- lm(new.harv ~  area + sun + rain + exp + dist + child + educ) 
+m.mod <- lm(harv ~  area + sun + rain + exp + dist + child + educ, data=m.dat) 
 summary(m.mod)
+
+orig.mod <- lm(harv ~  area + sun + rain + exp + dist + child + educ, data=data_table)
+summary(orig.mod)
