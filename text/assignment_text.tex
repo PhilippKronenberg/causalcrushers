@@ -22,7 +22,7 @@ The package of improved maize seeds and fertilizers can be picked up for free at
 
 However, we observe that only a subgroup of agricultural households takes the treatment by picking up the seed + fertilizer package. We guess that e.g. the distance to the supply stations of a household, the education (as read/write dummy) or number of very young children (< 10 years) influences the choice to pick up the package and that the selection of treatment is therefore not random. 
 
-Unfortunately, we have no information about the soil quality, which has an influence on the amount harvested even without any treatment. Therefore, we also face the issue of omitted variable bias. \todo{(Here: if we need to adjust, we can also assume that the soil quality of the study area has no differences between the farms. However, I thought maybe it would be interesting for task 5 to consider a farm fixed effect to control for soil quality differences. Besides, we could also include a variable “soil quality in soil-points” U ~ (1,100) to consider the variable in the equation).}
+Unfortunately, we have no information about the soil quality, which has an influence on the amount harvested even without any treatment. Therefore, we also face the issue of omitted variable bias. 
 
 \begin{enumerate}
 \item Experiment
@@ -51,8 +51,8 @@ In this experiment we consider a sample consisting of 10.000 observations. Each 
 %Cultivated area with maize (m2): $\textit{area}_i \sim$ U(100, 5000) \\
 %Sun-hours during growing period (h): $\textit{sun}_i \sim$ U(400, 600) \\
 %total rainfall during growing period (mm): $\textit{rain}_i \sim$ U(600, 850) \\
-%Number of children under 10 years: $\textit{child}_i \sim$ U(0, 5)  \todo{$\Rightarrow$ Idea: more children influence the time, which can be spend on the field to look after the plants; can change in both direction in 5.)} \\
-%Years of experiences: $\textit{exp}_i \sim$ U(1, 35) \todo{$\Rightarrow$ increases in 5.)} \\
+%Number of children under 10 years: $\textit{child}_i \sim$ U(0, 5)  \\
+%Years of experiences: $\textit{exp}_i \sim$ U(1, 35) \\
 %Education: $\textit{educ}_i \sim$ U\{0,1\}, where 1 is good and 0 bad reading and writing skills \\
 %Distance to the supply stations of a household (km): $\textit{dist}_i \sim$ U(1, 100) \\
 
@@ -146,7 +146,7 @@ harv & 677.25 & 752.78 & 651.75 &  & 978.75 & 624.12 &  \\
 \footnotesize{Notes: In the table are the mean values of the variables for the different assignment and treatment groups. \textit{Obs} denotes the number of observations. P-Values are calculated with an unpaired two-samples t-test.}
 \end{table}
 
-If treatment was randomly assigned, there is no significant difference in the mean of the covariates for the treated and untreated sample. Thus, a random assignment would allow us to identify the causal treatment effect by calculating the differences in the mean for the outcome variable between treated and untreated sample. Taking a look at the p-values of the  unpaired two-samples t-test, we can see that the means of the covariates are mostly not significantly different from each other\todo{why some of them still are?}. However, in the self-selection case, we see that the variables $\textit{child}_i$, $\textit{educ}_i$, and $\textit{dist}_i$ are not balanced between treated and untreated sample and the p-values show that the means for those variables are highly significantly different from each other\todo{why also some other variable have low p-values?}. Since these variables have an effect on the outcome variable $\textit{harv}_i$, the distribution of the outcome variable looks different as we can observe in the density plots.
+If treatment was randomly assigned, there is no significant difference in the mean of the covariates for the treated and untreated sample. Thus, a random assignment would allow us to identify the causal treatment effect by calculating the differences in the mean for the outcome variable between treated and untreated sample. Taking a look at the p-values of the  unpaired two-samples t-test, we can see that the means of the covariates are mostly not significantly different from each other. However, in the self-selection case, we see that the variables $\textit{child}_i$, $\textit{educ}_i$, and $\textit{dist}_i$ are not balanced between treated and untreated sample and the p-values show that the means for those variables are highly significantly different from each other. Since these variables have an effect on the outcome variable $\textit{harv}_i$, the distribution of the outcome variable looks different as we can observe in the density plots.
 
 \begin{figure}[htb]
 \begin{raggedleft}

@@ -4,6 +4,7 @@
 library(tidyverse)
 library(AER)
 library(rddtools)
+library(MatchIt)
 ###############################################################################################################################################
 ###############################################################################################################################################
 
@@ -55,7 +56,7 @@ old.harv <- df$harv
 
 # Redefine harvest based on new treatment restriction
 df <- df %>%
-  transmute(harv = 400 + 0.05*area + 0.04*sun + 0.03*rain + 5*exp - 5*child + 10*educ + 100*treat + rnorm(1, mean=0, sd=1), .before = area)
+  mutate(new.harv = 400 + 0.05*area + 0.04*sun + 0.03*rain + 5*exp - 5*child + 10*educ + 100*treat + rnorm(1, mean=0, sd=1), .before = area)
 
 #Save new harvest numbers
 new.harv <- df$harv
@@ -67,16 +68,12 @@ plot(area,new.harv)
 
 ## Make RDD data object;  RDD cutpoint is at 1000 sq. m. for farm area
 attach(df)
-rd.dat <- rdd_data(x=area, y=harv, cutpoint=1000)
+rd.dat <- rdd_data(x=area, y=new.harv, cutpoint=1000)
 
 ## Plot
 rd.dat$color <- cut(rd.dat$x, breaks = c(0,1000,+Inf))
 plot(rd.dat$x,rd.dat$y,
      col=rd.dat$color)
-
-rdplot(y=harv, x=area, c=1000, title="Area and Harvest",
-       y.label="harvest",
-       x.label="area")
 
 ## Estimate sharp RDD model 
 rdd_mod <- rdd_reg_lm(rdd_object=rd.dat,
@@ -90,11 +87,25 @@ plot(rdd_mod,
 
 ###############################################################################################################################################
 ###############################################################################################################################################
-
 ## Part c - Matching approach (e.g., exact covariate matching or nearest neighbor matching based on the 
 ##          propensity score or the post-double-selection LASSO method2 
 
-## Nearest neigbor/propensity-score matching: https://stats.stackexchange.com/questions/386399/11-nearest-neighbor-propensity-score-matching-in-r-matchit-package
+## Nearest neighbor/propensity-score matching: https://stats.stackexchange.com/questions/386399/11-nearest-neighbor-propensity-score-matching-in-r-matchit-package
 ##    https://www.r-bloggers.com/2016/06/how-to-use-r-for-matching-samples-propensity-score/
 ##    https://www.rdocumentation.org/packages/MatchIt/versions/4.1.0/topics/matchit
 ##    https://cran.r-project.org/web/packages/Matching/Matching.pdf (downloaded)
+
+## Perform matching
+m.out <- matchit(treat ~ area + sun + rain + exp + dist + child + educ, data = data_table, method="nearest", ratio=1)
+summary(m.out)
+
+## Plot
+#plot(m.out, type="jitter")
+plot(m.out, type="hist") # plots very similar between raw and matched; probably because data randomly distributed in data generation
+
+## Save matched data as new dataframe
+m.dat <- match.data(m.out)
+
+## Run model with new data
+m.mod <- lm(new.harv ~  area + sun + rain + exp + dist + child + educ) 
+summary(m.mod)
